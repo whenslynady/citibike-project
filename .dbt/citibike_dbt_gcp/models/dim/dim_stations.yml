@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_stations
+    description: "Dimension table for Citibike stations (start and end stations combined)"
+    columns:
+      - name: station_name
+        description: "Unique station name"
+        tests:
+          - not_null
+          - unique
+      - name: lat
+        description: "Latitude of the station"
+        tests:
+          - not_null
+      - name: lng
+        description: "Longitude of the station"
+        tests:
+          - not_null

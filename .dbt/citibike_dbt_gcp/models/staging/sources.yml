@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: citibike_source
+    database: sound-harbor-480119-v8      # <- project ID la
+    schema: de_citibike_tripdata_1        # <- dataset la
+    tables:
+      - name: citibike_tripdata_partitioned_2025

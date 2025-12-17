@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_bikes
+    description: "Dimension table for bike types in Citibike data"
+    columns:
+      - name: bike_type
+        description: "Type of bike (classic_bike or electric_bike)"
+        tests:
+          - not_null
+          - unique

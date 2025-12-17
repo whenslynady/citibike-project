@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: fact_trips
+    description: "Fact table for Citibike trips with references to station, user, and bike dimensions"
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier from staging table"
+        tests:
+          - not_null
+          - unique
+        data_type: STRING
+
+      - name: started_at
+        description: "Ride start timestamp"
+        tests:
+          - not_null
+        data_type: TIMESTAMP
+
+      - name: ended_at
+        description: "Ride end timestamp"
+        tests:
+          - not_null
+        data_type: TIMESTAMP
+
+      - name: start_station_name
+        description: "Name of the starting station (from dim_stations)"
+        tests:
+          - not_null
+        data_type: STRING
+
+      - name: start_lat
+        description: "Latitude of the starting station"
+        data_type: FLOAT
+
+      - name: start_lng
+        description: "Longitude of the starting station"
+        data_type: FLOAT
+
+      - name: end_station_name
+        description: "Name of the ending station (from dim_stations)"
+        tests:
+          - not_null
+        data_type: STRING
+
+      - name: end_lat
+        description: "Latitude of the ending station"
+        data_type: FLOAT
+
+      - name: end_lng
+        description: "Longitude of the ending station"
+        data_type: FLOAT
+
+      - name: rideable_type
+        description: "Type of bike used (from dim_bikes)"
+        data_type: STRING
+
+      - name: member_casual
+        description: "User type (from dim_users)"
+        data_type: STRING
+
+      - name: trip_duration_minutes
+        description: "Duration of the trip in minutes"
+        data_type: FLOAT
+
+      - name: start_hour
+        description: "Hour of the day when the trip started (0–23)"
+        data_type: INT
+
+      - name: trip_distance_km
+        description: "Approximate distance of the trip in kilometers (Haversine formula)"
+        data_type: FLOAT
+
+      - name: is_rush_hour
+        description: "Flag if the trip started during rush hour (1 = yes, 0 = no)"
+        data_type: INT
+
+      - name: trip_category
+        description: "Categorization of trip duration: short / medium / long"
+        data_type: STRING
+
+      - name: ride_efficiency
+        description: "Trip efficiency = distance / duration (km per minute)"
+        data_type: FLOAT

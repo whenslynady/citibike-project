@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "Dimension table for Citibike users (member or casual)"
+    columns:
+      - name: user_type
+        description: "Type of user (member or casual)"
+        tests:
+          - not_null
+          - unique

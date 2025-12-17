@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_citibike_tripdata
+    description: "Clean staging layer for Citibike trip data from external Parquet"
+    columns:
+      - name: ride_id
+        description: "Primary ID – must be unique and not null"
+        tests:
+          - not_null
+          - unique
+
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null
+
+      - name: ended_at
+        description: "Trip end timestamp"
+        tests:
+          - not_null
+
+      - name: start_station_name
+        description: "Name of the start station"
+        tests:
+          - not_null
+
+      - name: end_station_name
+        description: "Name of the end station"
+        tests:
+          - not_null
+
+      - name: rideable_type
+        description: "Type of bike"
+        tests:
+          - accepted_values:
+              values: ['classic_bike', 'electric_bike']
+
+      - name: member_casual
+        description: "User type"
+        tests:
+          - accepted_values:
+              values: ['member', 'casual']
+
+      - name: start_lat
+        description: "Latitude of start station"
+      - name: start_lng
+        description: "Longitude of start station"
+      - name: end_lat
+        description: "Latitude of end station"
+      - name: end_lng
+        description: "Longitude of end station"

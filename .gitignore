@@ -1,0 +1,64 @@
+# DBT and Google credentials
+/.dbt/profiles.yml
+/.dbt/.user.yml
+
+/.google
+
+# Environment files
+.env
+
+# Git metadata
+/.git
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Airflow files
+airflow_settings.yaml
+airflow-webserver.pid
+webserver_config.py
+airflow.cfg
+airflow.db
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Astro project folder
+astro/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# TZ data files (timezone)
+tzdata-*/
+
+# Python packages
+*.egg-info/
+dist/
+build/
+*.dist-info/
+*.egg/
+
+# Logs
+*.log
+
+# IDE / editor files
+.vscode/
+.idea/
+
+
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Terraform variable files (optional)
+*.tfvars
+
+# Terraform directories
+.terraform/
